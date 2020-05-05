@@ -54,8 +54,14 @@ function checkUser(req,res){
             if(docs.email=== req.body.uname && docs.password === req.body.password && docs.active === true)
             { 
                 console.log("Authentication Done!!!")
-                res.redirect('/admin_dashboard');
-                
+                if(docs.role=="admin")
+                {
+                  res.redirect('/admin_dashboard');
+                }
+                else if(docs.role=="faculty")
+                {
+                  res.redirect('/faculty_getstarted')
+                }
             }
         }
         else{
