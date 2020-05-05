@@ -22,7 +22,7 @@ const userSchema = new Schema({
   },
   user_type: {
     type: String,
-    enum: ["admin", "faculty", "student"],
+    role: ["admin", "faculty", "student"],
     required: true,
   },
   reg_date: {
